@@ -1,5 +1,5 @@
 export const metaData = {
-  baseUrl: "https://refactornator.com/",
+  baseUrl: "https://astro-blog-9og.pages.dev",
   title: "Liam Lindner",
   name: "Liam",
   ogImage: "/opengraph-image.png",
@@ -11,5 +11,5 @@ export const socialLinks = {
   github: "https://github.com/refactornator",
   instagram: "https://www.instagram.com/liameveryday",
   linkedin: "https://www.linkedin.com/in/liam-lindner/",
-  email: "https://substack.com/@liameveryday",
+  substack: "https://substack.com/@liameveryday",
 };

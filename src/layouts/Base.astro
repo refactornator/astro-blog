@@ -32,12 +32,6 @@ const { title, description, image } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <Themes />
     <BaseHead title={title} description={description} image={image} />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Liam Lindner's Personal Site"
-      href={new URL("rss.xml", Astro.site)}
-    />
   </head>
   <body
     class="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40

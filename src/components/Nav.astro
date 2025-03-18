@@ -8,14 +8,14 @@ const navItems: Record<string, { name: string }> = {
 };
 ---
 
-<nav class="lg:mb-16 mb-12 py-5">
-  <div class="flex flex-col md:flex-row md:items-center justify-between">
+<nav class="mb-2 py-5">
+  <div class="flex flex-row items-center justify-between">
     <div class="flex items-center">
       <a href="/" class="text-3xl font-semibold">
-        {metaData.title}
+        {metaData.name}
       </a>
     </div>
-    <div class="flex flex-row gap-4 mt-6 md:mt-0 md:ml-auto items-center">
+    <div class="flex flex-row gap-4 ml-auto items-center">
       {
         Object.entries(navItems).map(([path, { name }]) => (
           <a

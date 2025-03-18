@@ -12,7 +12,7 @@ import opengraphImages, { presets } from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astrofolio.pages.dev",
+  site: "https://astro-blog-9og.pages.dev",
   integrations: [
     mdx({
       image: {
@@ -73,5 +73,4 @@ export default defineConfig({
       },
     }),
   ],
-  output: "static",
 });
