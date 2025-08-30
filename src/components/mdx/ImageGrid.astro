@@ -5,6 +5,7 @@ interface ImageGridProps {
   images: {
     src: string;
     alt: string;
+    caption?: string;
   }[];
   columns?: 2 | 3 | 4;
 }
@@ -26,7 +27,7 @@ const gridClass = {
           <button
             type="button"
             class="block w-full h-full cursor-pointer transition-transform hover:scale-105 rounded-lg"
-            onclick={`openLightbox('${image.src}', '${image.alt}')`}
+            onclick={`openLightbox('${image.src}', '${image.alt}', '${image.caption || ''}')`}
           >
             <Image
               alt={image.alt}
@@ -51,16 +52,27 @@ const gridClass = {
         ×
       </button>
       <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain" />
+      <p id="lightbox-caption" class="mt-4 text-white text-center text-lg hidden"></p>
     </div>
   </div>
 </section>
 
 <script is:inline>
-  function openLightbox(src, alt) {
+  function openLightbox(src, alt, caption) {
     const lightbox = document.getElementById('lightbox');
     const img = document.getElementById('lightbox-img');
+    const captionEl = document.getElementById('lightbox-caption');
+
     img.src = src;
     img.alt = alt;
+
+    if (caption && caption.trim()) {
+      captionEl.textContent = caption;
+      captionEl.classList.remove('hidden');
+    } else {
+      captionEl.classList.add('hidden');
+    }
+
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
     document.body.style.overflow = 'hidden';

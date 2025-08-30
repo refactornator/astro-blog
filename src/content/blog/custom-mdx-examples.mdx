@@ -82,9 +82,9 @@ Astrofolio uses a custom [image grid component](https://github.com/vikas5914/Ast
 <ImageGrid
   columns={3} // Accepts 2, 3, or 4 columns
   images={[
-    { src: "/photos/photo1.jpg", alt: "Photo1" },
-    { src: "/photos/photo2.jpg", alt: "Photo2" },
-    { src: "/photos/photo3.jpg", alt: "Photo3" },
+    { src: "/photos/photo1.jpg", alt: "Photo1", caption: "Beautiful Photo 1" },
+    { src: "/photos/photo2.jpg", alt: "Photo2", caption: "Amazing Photo 2" },
+    { src: "/photos/photo3.jpg", alt: "Photo3" }, // caption is optional
   ]}
 />
 ```
@@ -94,8 +94,8 @@ Renders:
 <ImageGrid
   columns={3}
   images={[
-    { src: "/photos/photo1.jpg", alt: "Photo1" },
-    { src: "/photos/photo2.jpg", alt: "Photo2" },
+    { src: "/photos/photo1.jpg", alt: "Photo1", caption: "Beautiful Photo 1" },
+    { src: "/photos/photo2.jpg", alt: "Photo2", caption: "Amazing Photo 2" },
     { src: "/photos/photo3.jpg", alt: "Photo3" },
   ]}
 />
