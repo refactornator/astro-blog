@@ -1,9 +1,9 @@
 export const metaData = {
   baseUrl: "https://refactornator.com",
   title: "Liam Lindner",
-  name: "Liam",
+  name: "Liam Lindner",
   ogImage: "/opengraph-image.png",
-  description: "A human being made of flesh and blood.",
+  description: "Liam is a software engineer and artist in San Francisco. Explore projects, essays, and photography at the intersection of technology, creativity, and curiosity.",
 }
 
 export const socialLinks = {
