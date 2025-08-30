@@ -1,15 +1,15 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import tailwindcss from "@tailwindcss/vite";
-import react from "@astrojs/react";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import icon from "astro-icon";
-import opengraphImages, { presets } from "astro-opengraph-images";
-import fs from "node:fs";
+import fs from "node:fs"
+import mdx from "@astrojs/mdx"
+import react from "@astrojs/react"
+import sitemap from "@astrojs/sitemap"
+import tailwindcss from "@tailwindcss/vite"
+import { defineConfig } from "astro/config"
+import icon from "astro-icon"
+import opengraphImages, { presets } from "astro-opengraph-images"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeKatex from "rehype-katex"
+import rehypeSlug from "rehype-slug"
+import remarkMath from "remark-math"
 
 // https://astro.build/config
 export default defineConfig({
@@ -67,7 +67,7 @@ export default defineConfig({
             weight: 400,
             style: "normal",
             data: fs.readFileSync(
-              "node_modules/@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff"
+              "node_modules/@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff",
             ),
           },
           {
@@ -75,11 +75,11 @@ export default defineConfig({
             weight: 600,
             style: "normal",
             data: fs.readFileSync(
-              "node_modules/@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff"
+              "node_modules/@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff",
             ),
           },
         ],
       },
     }),
   ],
-});
+})

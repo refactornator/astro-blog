@@ -7,7 +7,9 @@
     "start": "bunx --bun astro dev",
     "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "biome format --write .",
+    "check": "biome check ."
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.6",
@@ -38,6 +40,7 @@
     "tw-to-css": "^0.0.12"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.2",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/tabler": "^1.2.22",

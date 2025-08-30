@@ -7,17 +7,17 @@ interface Props {
 const { date, includeRelative = false } = Astro.props;
 
 const formatDate = (date: Date | string, includeRelative: boolean): string => {
-  let currentDate = new Date();
-  let targetDate = date instanceof Date ? date : new Date(date);
+  const currentDate = new Date();
+  const targetDate = date instanceof Date ? date : new Date(date);
 
   if (isNaN(targetDate.getTime())) {
     console.error("Invalid date:", date);
     return "Invalid Date";
   }
 
-  let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-  let monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-  let daysAgo = currentDate.getDate() - targetDate.getDate();
+  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
+  const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
+  const daysAgo = currentDate.getDate() - targetDate.getDate();
 
   let formattedDate = "";
 
@@ -31,7 +31,7 @@ const formatDate = (date: Date | string, includeRelative: boolean): string => {
     formattedDate = "Today";
   }
 
-  let fullDate = targetDate.toLocaleString("en-us", {
+  const fullDate = targetDate.toLocaleString("en-us", {
     month: "short",
     day: "numeric",
     year: "numeric",

@@ -1,4 +1,17 @@
-{  // Let Tailwind IntelliSense handle Tailwind syntax
+{
+  // Biome as default formatter for JS/TS/JSON/CSS
+  "editor.defaultFormatter": "biomejs.biome",
+  "[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[javascriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[typescriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[json]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[css]": { "editor.defaultFormatter": "biomejs.biome" },
+
+  // Keep Astro extension for .astro files
+  "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" },
+
+  // Let Tailwind IntelliSense handle Tailwind syntax
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
@@ -13,5 +26,5 @@
   "tailwindCSS.includeLanguages": {
     "astro": "html"
   },
-  "svg.preview.background": "transparent",  
+  "svg.preview.background": "transparent"
 }

@@ -1,9 +1,9 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import { metaData } from "./../config";
+import { getCollection } from "astro:content"
+import rss from "@astrojs/rss"
+import { metaData } from "./../config"
 
 export async function GET(context) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog")
   return rss({
     title: metaData.title,
     description: metaData.description,
@@ -12,5 +12,5 @@ export async function GET(context) {
       ...post.data,
       link: `/blog/${post.slug}/`,
     })),
-  });
+  })
 }

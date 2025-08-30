@@ -5,10 +5,10 @@ interface Props {
   image?: string;
 }
 
-import { metaData } from "../config";
-import { SEO } from "astro-seo";
 
 import { getImagePath } from "astro-opengraph-images";
+import { SEO } from "astro-seo";
+import { metaData } from "../config";
 
 const { title, description = metaData.description, image } = Astro.props;
 
