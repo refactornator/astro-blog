@@ -6,7 +6,7 @@ interface Props {
 }
 
 import Themes from "astro-themes";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Nav.astro";
@@ -23,7 +23,7 @@ const { title, description, image } = Astro.props;
 
 <html lang="en" class="scrollbar-hide">
   <head>
-    <ViewTransitions />
+    <ClientRouter />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="googlebot"
