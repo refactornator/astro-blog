@@ -76,15 +76,15 @@ Renders:
 
 ## Image Grid
 
-Astrofolio uses a custom [image grid component](https://github.com/vikas5914/Astrofolio/blob/main/src/components/mdx/ImageGrid.astro) to display image galleries.
+Astrofolio uses a custom [image grid component](https://github.com/vikas5914/Astrofolio/blob/main/src/components/mdx/ImageGrid.astro) to display image galleries with lightbox functionality. Click any image to view it in full screen.
 
 ```jsx
 <ImageGrid
   columns={3} // Accepts 2, 3, or 4 columns
   images={[
-    { src: "/photos/photo1.jpg", alt: "Photo1", href: "#" }, // 'href' is optional
-    { src: "/photos/photo2.jpg", alt: "Photo2", href: "#" },
-    { src: "/photos/photo3.jpg", alt: "Photo3"},
+    { src: "/photos/photo1.jpg", alt: "Photo1" },
+    { src: "/photos/photo2.jpg", alt: "Photo2" },
+    { src: "/photos/photo3.jpg", alt: "Photo3" },
   ]}
 />
 ```
@@ -94,8 +94,8 @@ Renders:
 <ImageGrid
   columns={3}
   images={[
-    { src: "/photos/photo1.jpg", alt: "Photo1", href: "#" },
-    { src: "/photos/photo2.jpg", alt: "Photo2", href: "#" },
+    { src: "/photos/photo1.jpg", alt: "Photo1" },
+    { src: "/photos/photo2.jpg", alt: "Photo2" },
     { src: "/photos/photo3.jpg", alt: "Photo3" },
   ]}
 />

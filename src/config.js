@@ -1,5 +1,5 @@
 export const metaData = {
-  baseUrl: "https://astro-blog-9og.pages.dev",
+  baseUrl: "https://refactornator.com",
   title: "Liam Lindner",
   name: "Liam",
   ogImage: "/opengraph-image.png",
