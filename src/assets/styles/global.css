@@ -3,7 +3,6 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Font families */
   --font-sans: "Geist Sans", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 }

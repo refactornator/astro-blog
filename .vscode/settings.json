@@ -1,3 +1,17 @@
-{
-    "svg.preview.background": "transparent"
+{  // Let Tailwind IntelliSense handle Tailwind syntax
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+
+  // Treat your Tailwind entry file as PostCSS so @theme and @plugin are recognized
+  "files.associations": {
+    "tailwind.css": "postcss"
+  },
+
+  // Helpful Tailwind settings
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+  "svg.preview.background": "transparent",  
 }
