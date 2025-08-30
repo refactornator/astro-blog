@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -9,10 +9,14 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import icon from "astro-icon";
 import opengraphImages, { presets } from "astro-opengraph-images";
+import fs from "node:fs";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-blog-9og.pages.dev",
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
     mdx({
       image: {
@@ -43,7 +47,6 @@ export default defineConfig({
       gfm: true,
     }),
     sitemap(),
-    tailwind(),
     react({
       experimentalReactChildren: true,
     }),
@@ -60,13 +63,19 @@ export default defineConfig({
       options: {
         fonts: [
           {
-            name: "Roboto",
-            name: "Roboto",
-            name: "Roboto",
+            name: "Geist Sans",
             weight: 400,
             style: "normal",
             data: fs.readFileSync(
-              "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
+              "node_modules/@fontsource/geist-sans/files/geist-sans-latin-400-normal.woff"
+            ),
+          },
+          {
+            name: "Geist Sans",
+            weight: 600,
+            style: "normal",
+            data: fs.readFileSync(
+              "node_modules/@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff"
             ),
           },
         ],
