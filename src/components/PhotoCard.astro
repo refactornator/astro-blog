@@ -1,0 +1,37 @@
+---
+import { urlFor } from "../lib/sanityImage";
+
+interface Props {
+  photo: any;
+  loading?: "lazy" | "eager";
+  thumbnailSize?: number;
+}
+
+const { photo, loading = "lazy", thumbnailSize = 500 } = Astro.props;
+
+const lqip = photo?.asset?.metadata?.lqip ?? "";
+// Square thumbnail using hotspot for cropping - pass the full photo object to respect hotspot
+const src = urlFor(photo).width(thumbnailSize).height(thumbnailSize).fit('crop').auto("format").url();
+// Full size preserves natural aspect ratio - pass the full photo object to respect crop/hotspot
+const fullsizeSrc = urlFor(photo).width(1920).auto("format").url();
+const altText = photo?.alt || "";
+const captionText = photo?.caption || "";
+---
+
+<figure class="aspect-square">
+  <button
+    type="button"
+    class="w-full h-full cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-xl"
+    onclick={`openLightbox('${fullsizeSrc}', '${altText}', '${captionText}')`}
+  >
+    <img
+      src={src}
+      alt={altText}
+      width={thumbnailSize}
+      height={thumbnailSize}
+      loading={loading}
+      class="w-full h-full object-cover rounded-xl"
+      style={lqip ? `background:url('${lqip}') center / cover no-repeat` : undefined}
+    />
+  </button>
+</figure>

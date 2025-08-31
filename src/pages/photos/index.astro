@@ -1,75 +1,100 @@
 ---
-import ImageGrid from "../../components/mdx/ImageGrid.astro";
+import PhotoSection from "../../components/PhotoSection.astro";
+import type { LayoutRow } from "../../components/types";
 import Base from "../../layouts/Base.astro";
 
 const title = "Photos";
 const description = "My Photos";
+
+const madridRows: LayoutRow[] = [
+  { cols: 3 },
+  { cols: 2 },
+  { cols: 4 },
+];
 ---
 
 <Base title={title} description={description}>
-  <section>
-    <h1 class="mb-8 text-2xl font-medium tracking-tight">Photos</h1>
-    <ImageGrid
-      columns={3}
-      images={[
-        {
-          src: "/photos/photo1.jpg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-        {
-          src: "/photos/IMG_0889.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-        {
-          src: "/photos/IMG_6609.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-      ]}
-    />
+  <PhotoSection slug="madrid" rows={madridRows} />
 
-    <ImageGrid
-      columns={2}
-      images={[
-        {
-          src: "/photos/IMG_6868.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-        {
-          src: "/photos/IMG_6855.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-      ]}
-    />
+  <!-- Improved lightbox overlay -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative w-full h-full flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+      <!-- Fixed position close button -->
+      <button
+        onclick="closeLightbox()"
+        class="fixed top-4 right-4 z-10 text-white text-2xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-70 transition-colors"
+      >
+        ×
+      </button>
 
-    <ImageGrid
-      columns={4}
-      images={[
-        {
-          src: "/photos/IMG_6895.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-        {
-          src: "/photos/IMG_0887.jpeg",
-          alt: "Madrid",
-          caption: "Cooking class in Madrid",
-        },
-        {
-          src: "/photos/IMG_0789.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-        {
-          src: "/photos/IMG_6811.jpeg",
-          alt: "Madrid",
-          caption: "Madrid",
-        },
-      ]}
-    />
-  </section>
+      <!-- Loading spinner -->
+      <div id="lightbox-loading" class="absolute inset-0 flex items-center justify-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+      </div>
+
+      <!-- Image container with fixed positioning -->
+      <div class="flex flex-col items-center justify-center max-w-full max-h-full">
+        <img
+          id="lightbox-img"
+          src=""
+          alt=""
+          class="max-w-full max-h-[80vh] object-contain opacity-0 transition-opacity duration-300"
+          onload="this.style.opacity='1'; document.getElementById('lightbox-loading').style.display='none';"
+        />
+        <p id="lightbox-caption" class="mt-4 text-white text-center text-lg max-w-2xl hidden"></p>
+      </div>
+    </div>
+  </div>
 </Base>
+
+<script is:inline>
+  function openLightbox(src, alt, caption) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const captionEl = document.getElementById('lightbox-caption');
+    const loading = document.getElementById('lightbox-loading');
+
+    // Reset image state
+    img.style.opacity = '0';
+    loading.style.display = 'flex';
+
+    // Set up caption
+    if (caption && caption.trim()) {
+      captionEl.textContent = caption;
+      captionEl.classList.remove('hidden');
+    } else {
+      captionEl.classList.add('hidden');
+    }
+
+    // Show lightbox
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+
+    // Load image (onload handler in HTML will hide loading and show image)
+    img.src = src;
+    img.alt = alt;
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const loading = document.getElementById('lightbox-loading');
+
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+
+    // Reset for next time
+    img.src = '';
+    img.style.opacity = '0';
+    loading.style.display = 'flex';
+  }
+
+  // Close on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>

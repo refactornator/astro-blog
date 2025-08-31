@@ -1,3 +1,3 @@
-import photo from "../schemas/photo";
+import photoSection from "../schemas/photoSection";
 
-export const schemaTypes = [photo];
+export const schemaTypes = [photoSection];

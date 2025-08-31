@@ -6,6 +6,7 @@ interface ImageGridProps {
     src: string;
     alt: string;
     caption?: string;
+    fullsizeUrl?: string; // Optional full-size URL for lightbox
   }[];
   columns?: 2 | 3 | 4;
 }
@@ -22,13 +23,15 @@ const gridClass = {
 <section>
   <div class={`grid ${gridClass} gap-4 my-8`}>
     {
-      images.map((image) => (
-        <div class="relative aspect-square">
-          <button
-            type="button"
-            class="block w-full h-full cursor-pointer transition-transform hover:scale-105 rounded-lg"
-            onclick={`openLightbox('${image.src}', '${image.alt}', '${image.caption || ''}')`}
-          >
+      images.map((image) => {
+        const lightboxSrc = image.fullsizeUrl || image.src;
+        return (
+          <div class="relative aspect-square">
+            <button
+              type="button"
+              class="block w-full h-full cursor-pointer transition-transform hover:scale-105 rounded-lg"
+              onclick={`openLightbox('${lightboxSrc}', '${image.alt}', '${image.caption || ''}')`}
+            >
             <Image
               alt={image.alt}
               src={image.src}
@@ -38,7 +41,8 @@ const gridClass = {
             />
           </button>
         </div>
-      ))
+        );
+      })
     }
   </div>
 

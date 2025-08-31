@@ -1,0 +1,63 @@
+---
+import { fetchPhotoSection } from "../lib/fetchPhotoSection";
+import PhotoCard from "./PhotoCard.astro";
+import type { LayoutRow } from "./types";
+
+interface Props {
+  slug: string;               // example: "madrid"
+  title?: string;             // optional override
+  rows?: LayoutRow[];         // optional layout with column counts
+  gap?: number;               // px
+}
+
+const { slug, title, rows, gap = 16 } = Astro.props;
+const data = await fetchPhotoSection(slug);
+
+const sectionTitle = data ? (typeof title === "string" ? title : data.title) : "Photos";
+const photos = data?.photos ?? [];
+
+// Simple helper for rows mode - just take photos in order
+let photoIndex = 0;
+function takePhotos(count: number) {
+  const result = photos.slice(photoIndex, photoIndex + count);
+  photoIndex += count;
+  return result;
+}
+---
+
+<section class="px-6 py-10 max-w-6xl mx-auto">
+  {sectionTitle && <h2 class="text-2xl font-semibold mb-5">{sectionTitle}</h2>}
+
+  {!data ? (
+    <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
+      <h3 class="text-lg font-medium text-yellow-800 dark:text-yellow-200 mb-2">
+        Photo Section Not Found
+      </h3>
+      <p class="text-yellow-700 dark:text-yellow-300 mb-4">
+        The photo section "{slug}" doesn't exist yet. To create it:
+      </p>
+      <ol class="list-decimal list-inside text-yellow-700 dark:text-yellow-300 space-y-1">
+        <li>Go to your Sanity Studio</li>
+        <li>Create a new "Photo Section" document</li>
+        <li>Set the slug to "{slug}"</li>
+        <li>Add some photos to the section</li>
+      </ol>
+    </div>
+  ) : rows ? (
+    <div style={`display:flex; flex-direction:column; gap:${gap}px;`}>
+      {rows.map((row) => {
+        const rowPhotos = takePhotos(row.cols);
+        const style = `display:grid; grid-template-columns:repeat(${row.cols}, minmax(0,1fr)); gap:${gap}px;`;
+        return (
+          <div style={style}>
+            {rowPhotos.map((p: any) => <PhotoCard photo={p} />)}
+          </div>
+        );
+      })}
+    </div>
+  ) : (
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {photos.map((p: any) => <PhotoCard photo={p} />)}
+    </div>
+  )}
+</section>
