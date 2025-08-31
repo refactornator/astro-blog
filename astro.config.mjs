@@ -11,6 +11,8 @@ import rehypeKatex from "rehype-katex"
 import rehypeSlug from "rehype-slug"
 import remarkMath from "remark-math"
 
+import sanity from "@sanity/astro"
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-blog-9og.pages.dev",
@@ -80,6 +82,11 @@ export default defineConfig({
           },
         ],
       },
+    }),
+    sanity({
+      projectId: "t6kvjzfq",
+      dataset: "production",
+      useCdn: false, // for static builds
     }),
   ],
 })

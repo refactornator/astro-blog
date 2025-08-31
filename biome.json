@@ -22,7 +22,7 @@
       "formatter": { "enabled": false }
     },
     {
-      "includes": ["dist/**", "build/**", ".astro/**"],
+      "includes": ["dist/**", "build/**", ".astro/**", "studio/**"],
       "linter": { "enabled": false },
       "formatter": { "enabled": false }
     }
