@@ -6,15 +6,27 @@ import Base from "../../layouts/Base.astro";
 const title = "Photos";
 const description = "My Photos";
 
-const madridRows: LayoutRow[] = [
+const spainRows: LayoutRow[] = [
   { cols: 3 },
   { cols: 2 },
   { cols: 4 },
 ];
+const improvTheaterRows: LayoutRow[] = [
+  { cols: 3 },
+  { cols: 2 },
+  { cols: 3 },
+];
+const moroccoRows: LayoutRow[] = [
+  { cols: 3 },
+  { cols: 2 },
+  { cols: 3 },
+];
 ---
 
 <Base title={title} description={description}>
-  <PhotoSection slug="madrid" rows={madridRows} />
+  <PhotoSection slug="spain" rows={spainRows} />
+  <PhotoSection slug="improv-theater" rows={improvTheaterRows} />
+  <PhotoSection slug="morocco" rows={moroccoRows} />
 
   <!-- Improved lightbox overlay -->
   <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4" onclick="closeLightbox()">
