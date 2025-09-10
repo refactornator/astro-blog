@@ -59,7 +59,6 @@ export default defineConfig({
         "fa6-brands": ["github", "instagram", "linkedin-in"],
       },
     }),
-    sitemap(),
     opengraphImages({
       render: presets.waveSvg,
       options: {
