@@ -5,6 +5,20 @@
 @theme {
   --font-sans: "Geist Sans", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  /* Color Palette */
+  --color-royal: #4169E1;
+  --color-sapphire: #0F3B82;
+  --color-midnight: #1B2B5F;
+  --color-shadow: #0A1428;
+  --color-plum: #3D1F47;
+  --color-berry: #A64253;
+  --color-ruby: #E63946;
+  --color-tangerine: #FF8C42;
+  --color-creamsicle: #FF9E5A;
+  --color-solar: #FFC300;
+  --color-storm: #C0C0C0;
+  --color-snuggles: #6B8FD9;
 }
 
 ::selection {
@@ -78,8 +92,23 @@ html {
   @apply m-0;
 }
 
-.prose h2,
-h3,
+.prose h2 {
+  @apply font-medium! tracking-tight! py-3 px-4 rounded-lg mt-8 mb-6;
+  background-color: color-mix(in srgb, var(--color-royal) 8%, transparent);
+  border-left: 4px solid var(--color-royal);
+}
+
+.prose h2:nth-of-type(2) {
+  border-left-color: var(--color-tangerine);
+  background-color: color-mix(in srgb, var(--color-tangerine) 8%, transparent);
+}
+
+.prose h2:nth-of-type(3) {
+  border-left-color: var(--color-snuggles);
+  background-color: color-mix(in srgb, var(--color-snuggles) 8%, transparent);
+}
+
+.prose h3,
 h4,
 h5,
 h6 {

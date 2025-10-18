@@ -44,7 +44,7 @@ export default defineConfig({
     }),
     icon({
       include: {
-        "fa6-solid": ["rss", "circle-half-stroke", "wand-magic", "film", "building", "handshake", "chart-line", "comments", "hammer", "mobile", "house"],
+        "fa6-solid": ["rss", "circle-half-stroke", "wand-magic-sparkles", "film", "building", "handshake", "chart-line", "comments", "hammer", "mobile", "house", "masks-theater", "wind", "camera", "pen-nib"],
         tabler: ["mail-filled"],
         "fa6-brands": ["github", "instagram", "linkedin-in"],
       },
