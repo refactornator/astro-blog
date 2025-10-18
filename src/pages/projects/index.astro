@@ -1,61 +1,45 @@
 ---
+import { Content } from "../../content/projects.md";
 import Base from "../../layouts/Base.astro";
 
-const projects = [
-  {
-    title: "Project One",
-    year: 2023,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veritatis dolorem rem praesentium dicta labore, at laudantium quisquam.",
-    url: "https://example.com/",
-  },
-  {
-    title: "Project Two",
-    year: 2022,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veritatis dolorem rem praesentium dicta labore, at laudantium quisquam.",
-    url: "https://example.com/",
-  },
-  {
-    title: "Project Three",
-    year: 2021,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veritatis dolorem rem praesentium dicta labore, at laudantium quisquam.",
-    url: "https://example.com/",
-  },
-];
-
 const title = "Projects";
-const description = "My Projects";
+const description = "Lessons learned from my work, side projects, and interests";
 ---
 
 <Base title={title} description={description}>
   <section>
-    <h1 class="mb-8 text-2xl font-medium tracking-tight">Projects</h1>
-    <div class="space-y-6">
-      {
-        projects.map((project, index) => (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block group hover:opacity-80 transition-opacity duration-200">
-            <div class="flex flex-col">
-              <div class="w-full flex justify-between items-baseline">
-                <span class="text-black dark:text-white font-medium tracking-tight">
-                  {project.title}
-                </span>
-                <span class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
-                  {project.year}
-                </span>
-              </div>
-              <p class="prose prose-neutral dark:prose-invert pt-3">
-                {project.description}
-              </p>
-            </div>
-          </a>
-        ))
-      }
+    <div class="prose prose-neutral dark:prose-invert max-w-none">
+      <Content />
     </div>
   </section>
 </Base>
+
+<style>
+  :global(h2) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  :global(h2::before) {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  :global(h2:nth-of-type(1)::before) {
+    content: "✨";
+    font-size: 1.5rem;
+  }
+
+  :global(h2:nth-of-type(2)::before) {
+    content: "💼";
+    font-size: 1.5rem;
+  }
+
+  :global(h2:nth-of-type(3)::before) {
+    content: "🚀";
+    font-size: 1.5rem;
+  }
+</style>
