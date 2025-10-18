@@ -18,10 +18,10 @@ const altText = photo?.alt || "";
 const captionText = photo?.caption || "";
 ---
 
-<figure class="aspect-square">
+<figure class="aspect-square overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
   <button
     type="button"
-    class="w-full h-full cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-xl"
+    class="w-full h-full cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
     onclick={`openLightbox('${fullsizeSrc}', '${altText}', '${captionText}')`}
   >
     <img
@@ -31,7 +31,7 @@ const captionText = photo?.caption || "";
       height={thumbnailSize}
       loading={loading}
       class="w-full h-full object-cover rounded-xl"
-      style={lqip ? `background:url('${lqip}') center / cover no-repeat` : undefined}
+      style={lqip ? `background-image:url('${lqip}'); background-size:cover; background-position:center;` : undefined}
     />
   </button>
 </figure>
