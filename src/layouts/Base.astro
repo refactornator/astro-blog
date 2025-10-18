@@ -39,7 +39,7 @@ const { title, description, image } = Astro.props;
     class="font-sans antialiased flex flex-col items-center justify-center mx-auto mb-20 lg:mb-40
     scrollbar-hide relative">
     <!-- Animated gradient background - concentrated at top -->
-    <div class="fixed left-0 right-0 top-0 h-screen -z-10 overflow-hidden pointer-events-none gradient-container" style="will-change: contents;">
+    <div class="absolute left-0 right-0 top-0 h-screen -z-10 overflow-hidden pointer-events-none gradient-container" style="will-change: contents;">
       <!-- Light mode: top gradient (static on mobile, animated on sm+) -->
       <div class="gradient-top absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-tangerine/25 via-creamsicle/15 to-transparent dark:from-tangerine/40 dark:via-solar/30 dark:to-transparent"></div>
       <!-- Light mode: right side glow (hidden on mobile) -->
@@ -48,7 +48,8 @@ const { title, description, image } = Astro.props;
       <div class="hidden sm:block gradient-left absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-sapphire/30 to-transparent dark:from-solar/40 rounded-full blur-3xl"></div>
     </div>
     <main
-      class="flex-auto min-w-0 mt-2 lg:mt-8 flex flex-col px-6 sm:px-4 md:px-0 max-w-[640px] w-full">
+      class="flex-auto min-w-0 mt-2 lg:mt-8 flex flex-col px-6 sm:px-4 md:px-0 max-w-[640px] w-full"
+      style="padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(1.5rem, env(safe-area-inset-right));">
       <Navbar />
       <slot />
       <Footer />
