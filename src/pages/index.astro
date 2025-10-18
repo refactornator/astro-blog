@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 import { socialLinks } from "../config";
 import Base from "../layouts/Base.astro";
+import profilePhoto from "../assets/profile.png";
 ---
 
 <Base>
   <section>
     <Image
-      src="/profile.png"
+      src={profilePhoto}
       alt="Profile photo"
       class="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 grayscale hover:grayscale-0"
       width={160}
