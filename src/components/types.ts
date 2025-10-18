@@ -1,3 +1,3 @@
 export type LayoutRow = {
-  cols: number;
-};
+  cols: number
+}

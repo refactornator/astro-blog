@@ -7,18 +7,18 @@
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
   /* Color Palette */
-  --color-royal: #4169E1;
-  --color-sapphire: #0F3B82;
-  --color-midnight: #1B2B5F;
-  --color-shadow: #0A1428;
-  --color-plum: #3D1F47;
-  --color-berry: #A64253;
-  --color-ruby: #E63946;
-  --color-tangerine: #FF8C42;
-  --color-creamsicle: #FF9E5A;
-  --color-solar: #FFC300;
-  --color-storm: #C0C0C0;
-  --color-snuggles: #6B8FD9;
+  --color-royal: #4169e1;
+  --color-sapphire: #0f3b82;
+  --color-midnight: #1b2b5f;
+  --color-shadow: #0a1428;
+  --color-plum: #3d1f47;
+  --color-berry: #a64253;
+  --color-ruby: #e63946;
+  --color-tangerine: #ff8c42;
+  --color-creamsicle: #ff9e5a;
+  --color-solar: #ffc300;
+  --color-storm: #c0c0c0;
+  --color-snuggles: #6b8fd9;
 }
 
 ::selection {

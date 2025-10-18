@@ -1,4 +1,4 @@
-import { client } from "./sanityClient";
+import { client } from "./sanityClient"
 
 const QUERY = /* groq */ `
 *[_type == "photoSection" && slug.current == $slug][0]{
@@ -19,15 +19,15 @@ const QUERY = /* groq */ `
     }
   }
 }
-`;
+`
 
 export async function fetchPhotoSection(slug: string) {
-  const data = await client.fetch(QUERY, { slug });
-  if (!data) return null;
+  const data = await client.fetch(QUERY, { slug })
+  if (!data) return null
 
-  return { 
-    title: data.title, 
-    slug: data.slug?.current ?? slug, 
-    photos: data.photos
-  };
+  return {
+    title: data.title,
+    slug: data.slug?.current ?? slug,
+    photos: data.photos,
+  }
 }
