@@ -30,8 +30,15 @@ const captionText = photo?.caption || "";
       width={thumbnailSize}
       height={thumbnailSize}
       loading={loading}
-      class="w-full h-full object-cover"
-      style={lqip ? `background-image:url('${lqip}'); background-size:cover; background-position:center;` : undefined}
+      class="w-full h-full object-cover photo-img"
+      style={lqip ? `background-image:url('${lqip}'); background-size:cover; background-position:center; opacity: 0;` : 'opacity: 0;'}
+      onload="this.style.opacity='1';"
     />
   </button>
 </figure>
+
+<style>
+  .photo-img {
+    transition: opacity 0.4s ease-in-out;
+  }
+</style>
