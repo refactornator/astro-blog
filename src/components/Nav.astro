@@ -4,7 +4,8 @@ import { metaData } from "../config";
 
 const navItems: Record<string, { name: string }> = {
   "/": { name: "Home" },
-  "/photos": { name: "Photos" }, 
+  "/projects": { name: "Projects" },
+  "/photos": { name: "Photos" },
 };
 ---
 
@@ -20,6 +21,7 @@ const navItems: Record<string, { name: string }> = {
         Object.entries(navItems).map(([path, { name }]) => (
           <a
             href={path}
+            data-prefetch="intent"
             class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative">
             {name}
           </a>
