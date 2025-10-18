@@ -22,7 +22,7 @@ import "@styles/global.css";
 const { title, description, image } = Astro.props;
 ---
 
-<html lang="en" class="scrollbar-hide">
+<html lang="en" class="scrollbar-hide" style="overflow: clip;">
   <head>
     <ClientRouter />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,10 +37,9 @@ const { title, description, image } = Astro.props;
   </head>
   <body
     class="font-sans antialiased flex flex-col items-center justify-center mx-auto mb-20 lg:mb-40
-    scrollbar-hide relative"
-    style="padding-top: max(0.5rem, env(safe-area-inset-top));">
+    scrollbar-hide relative">
     <!-- Animated gradient background - concentrated at top -->
-    <div class="absolute left-0 right-0 h-screen -z-10 overflow-hidden pointer-events-none gradient-container" style="will-change: contents; top: calc(-1 * env(safe-area-inset-top));">
+    <div class="fixed left-0 right-0 top-0 h-screen -z-10 overflow-hidden pointer-events-none gradient-container" style="will-change: contents;">
       <!-- Light mode: top gradient (static on mobile, animated on sm+) -->
       <div class="gradient-top absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-tangerine/25 via-creamsicle/15 to-transparent dark:from-tangerine/40 dark:via-solar/30 dark:to-transparent"></div>
       <!-- Light mode: right side glow (hidden on mobile) -->
