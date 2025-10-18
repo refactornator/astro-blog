@@ -2,6 +2,18 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @plugin "@tailwindcss/typography";
 
+@keyframes slowPulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
 @theme {
   --font-sans: "Geist Sans", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
