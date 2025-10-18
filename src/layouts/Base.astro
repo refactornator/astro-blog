@@ -39,13 +39,13 @@ const { title, description, image } = Astro.props;
     class="font-sans antialiased flex flex-col items-center justify-center mx-auto mb-20 lg:mb-40
     scrollbar-hide relative">
     <!-- Animated gradient background - concentrated at top -->
-    <div class="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden pointer-events-none" transition:persist>
+    <div class="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden pointer-events-none" style="will-change: contents;">
       <!-- Light mode: top gradient -->
-      <div class="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-tangerine/25 via-creamsicle/15 to-transparent dark:from-tangerine/40 dark:via-solar/30 dark:to-transparent" style="animation: slowPulse 6s ease-in-out infinite;"></div>
+      <div class="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-tangerine/25 via-creamsicle/15 to-transparent dark:from-tangerine/40 dark:via-solar/30 dark:to-transparent" style="animation: slowPulse 6s ease-in-out infinite; will-change: opacity;"></div>
       <!-- Light mode: right side glow -->
-      <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-creamsicle/35 to-transparent dark:from-tangerine/50 rounded-full blur-3xl" style="animation: slowPulse 8s ease-in-out infinite 1s;"></div>
+      <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-creamsicle/35 to-transparent dark:from-tangerine/50 rounded-full blur-3xl" style="animation: slowPulse 8s ease-in-out infinite 1s; will-change: opacity;"></div>
       <!-- Dark mode: left side glow -->
-      <div class="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-sapphire/30 to-transparent dark:from-solar/40 rounded-full blur-3xl" style="animation: slowPulse 7s ease-in-out infinite 2s;"></div>
+      <div class="absolute top-20 left-0 w-80 h-80 bg-gradient-to-br from-sapphire/30 to-transparent dark:from-solar/40 rounded-full blur-3xl" style="animation: slowPulse 7s ease-in-out infinite 2s; will-change: opacity;"></div>
     </div>
     <main
       class="flex-auto min-w-0 mt-2 lg:mt-8 flex flex-col px-6 sm:px-4 md:px-0 max-w-[640px] w-full">
