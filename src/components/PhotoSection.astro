@@ -25,8 +25,8 @@ function takePhotos(count: number) {
 }
 ---
 
-<section class="py-10 max-w-6xl mx-auto">
-  {sectionTitle && <h2 class="text-2xl font-semibold mb-5">{sectionTitle}</h2>}
+<section class="py-10 w-full">
+  {sectionTitle && <h2 class="text-2xl font-semibold mb-5 px-6">{sectionTitle}</h2>}
 
   {!data ? (
     <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6">
@@ -44,7 +44,7 @@ function takePhotos(count: number) {
       </ol>
     </div>
   ) : rows ? (
-    <div style={`display:flex; flex-direction:column; gap:${gap}px; width:100%;`}>
+    <div style={`display:flex; flex-direction:column; gap:${gap}px; width:100%; padding: 0 1.5rem;`}>
       {rows.map((row) => {
         const rowPhotos = takePhotos(row.cols);
         const style = `display:grid; grid-template-columns:repeat(${row.cols}, 1fr); gap:${gap}px; width:100%;`;
