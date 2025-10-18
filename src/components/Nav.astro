@@ -12,7 +12,7 @@ const navItems: Record<string, { name: string }> = {
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="mb-2 py-5">
+<nav class="mb-2 py-5" style="padding-top: max(1.25rem, env(safe-area-inset-top));">
   <div class="flex flex-row items-center justify-between">
     <div class="flex items-center">
       <a href="/" class="text-3xl font-semibold text-[#1C1C1C] dark:text-[#D4D4D4]">
