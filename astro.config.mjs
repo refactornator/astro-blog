@@ -6,7 +6,6 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
 import opengraphImages, { presets } from "astro-opengraph-images"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeKatex from "rehype-katex"
 import rehypeSlug from "rehype-slug"
 import remarkMath from "remark-math"
@@ -35,15 +34,6 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       rehypePlugins: [
         rehypeSlug,
-        [
-          rehypeAutolinkHeadings,
-          {
-            behavior: "prepend",
-            properties: {
-              className: "anchor",
-            },
-          },
-        ],
         rehypeKatex,
       ],
       gfm: true,
