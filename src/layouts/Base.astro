@@ -37,7 +37,8 @@ const { title, description, image } = Astro.props;
   </head>
   <body
     class="font-sans antialiased flex flex-col items-center justify-center mx-auto mb-20 lg:mb-40
-    scrollbar-hide relative">
+    scrollbar-hide relative"
+    style="padding-top: max(0.5rem, env(safe-area-inset-top));">
     <!-- Animated gradient background - concentrated at top -->
     <div class="absolute top-0 left-0 right-0 h-screen -z-10 overflow-hidden pointer-events-none gradient-container" style="will-change: contents;">
       <!-- Light mode: top gradient (static on mobile, animated on sm+) -->
