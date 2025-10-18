@@ -7,6 +7,9 @@ const navItems: Record<string, { name: string }> = {
   "/projects": { name: "Projects" },
   "/photos": { name: "Photos" },
 };
+
+// Get current page path
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="mb-2 py-5">
@@ -18,14 +21,21 @@ const navItems: Record<string, { name: string }> = {
     </div>
     <div class="flex flex-row gap-4 ml-auto items-center">
       {
-        Object.entries(navItems).map(([path, { name }]) => (
-          <a
-            href={path}
-            data-prefetch="intent"
-            class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative">
-            {name}
-          </a>
-        ))
+        Object.entries(navItems).map(([path, { name }]) => {
+          const isActive = currentPath === path || (path !== "/" && currentPath.startsWith(path));
+          return (
+            <a
+              href={path}
+              data-prefetch="intent"
+              class={`transition-all flex align-middle relative pb-1 ${
+                isActive
+                  ? "border-b-2 border-sapphire dark:border-solar text-sapphire dark:text-solar"
+                  : "text-[#1C1C1C] dark:text-[#D4D4D4] hover:text-neutral-800 dark:hover:text-neutral-200"
+              }`}>
+              {name}
+            </a>
+          );
+        })
       }
       <button
         id="theme-toggle"
