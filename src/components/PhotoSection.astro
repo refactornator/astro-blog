@@ -44,10 +44,10 @@ function takePhotos(count: number) {
       </ol>
     </div>
   ) : rows ? (
-    <div style={`display:flex; flex-direction:column; gap:${gap}px;`}>
+    <div style={`display:flex; flex-direction:column; gap:${gap}px; width:100%;`}>
       {rows.map((row) => {
         const rowPhotos = takePhotos(row.cols);
-        const style = `display:grid; grid-template-columns:repeat(${row.cols}, minmax(0,1fr)); gap:${gap}px;`;
+        const style = `display:grid; grid-template-columns:repeat(${row.cols}, 1fr); gap:${gap}px; width:100%;`;
         return (
           <div style={style}>
             {rowPhotos.map((p: any) => <PhotoCard photo={p} />)}

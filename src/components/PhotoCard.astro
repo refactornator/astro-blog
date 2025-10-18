@@ -18,7 +18,7 @@ const altText = photo?.alt || "";
 const captionText = photo?.caption || "";
 ---
 
-<figure class="aspect-square overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700">
+<figure class="overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-700" style="aspect-ratio: 1 / 1; width: 100%;">
   <button
     type="button"
     class="w-full h-full cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -30,7 +30,7 @@ const captionText = photo?.caption || "";
       width={thumbnailSize}
       height={thumbnailSize}
       loading={loading}
-      class="w-full h-full object-cover rounded-xl"
+      class="w-full h-full object-cover"
       style={lqip ? `background-image:url('${lqip}'); background-size:cover; background-position:center;` : undefined}
     />
   </button>
