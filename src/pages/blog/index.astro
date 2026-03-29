@@ -19,7 +19,7 @@ const description = "Astrofolio Blog";
         posts.map((post) => (
           <a
             class="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80"
-            href={`/blog/${post.slug}`}>
+            href={`/blog/${post.id}`}>
             <div class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
               <p class="text-black dark:text-white tracking-tight">
                 {post.data.title}

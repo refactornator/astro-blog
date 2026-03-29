@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Base from "../../layouts/Base.astro";
 import "katex/dist/katex.min.css";
@@ -8,7 +8,7 @@ import { metaData } from "../../config";
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: post,
   }));
 }
@@ -20,7 +20,7 @@ const post = Astro.props;
 const { url, site } = Astro;
 const openGraphImageUrl = getImagePath({ url, site });
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Base title={post.data.title} description={post.data.summary}>
