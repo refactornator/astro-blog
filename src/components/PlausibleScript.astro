@@ -1,24 +1,10 @@
 ---
-// Plausible Analytics integration using @plausible-analytics/tracker
-// Automatically tracks page views, scroll depth, and user journeys
-// All domains (CNAMEs) are tracked under the primary Cloudflare Pages domain
+// Google Analytics 4
 ---
-
-<script>
-  import { init } from "@plausible-analytics/tracker";
-
-  // Primary domain for Plausible (Cloudflare Pages domain)
-  // All CNAMEs (refactornator.com, liameveryday.com, etc.) will be tracked under this domain
-  const PRIMARY_DOMAIN = "astro-blog-9og.pages.dev";
-
-  // Initialize Plausible with the primary domain
-  // Plausible will automatically track all CNAMEs pointing to this domain
-  init({
-    domain: PRIMARY_DOMAIN,
-    captureOnLocalhost: false,
-    outboundLinks: true,
-    fileDownloads: true,
-    formSubmissions: true,
-  });
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ME24SJN4RE"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ME24SJN4RE');
 </script>
-
