@@ -2,10 +2,7 @@
   "version": 1,
   "site": "liam-portfolio",
   "primary_metric": "home_bio_social_ctr",
-  "secondary_metrics": [
-    "footer_social_ctr",
-    "projects_nav_ctr"
-  ],
+  "secondary_metrics": ["footer_social_ctr", "projects_nav_ctr"],
   "editable_files": [
     "src/pages/index.astro",
     "src/components/Nav.astro",
