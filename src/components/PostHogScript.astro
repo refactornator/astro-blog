@@ -1,0 +1,39 @@
+---
+// PostHog analytics — captures page views and delegated data-track click events.
+// Included once in Base.astro. Handles Astro View Transitions via astro:page-load.
+---
+
+<script>
+  import posthog from "posthog-js";
+
+  const apiKey = import.meta.env.PUBLIC_POSTHOG_API_KEY;
+  const host = import.meta.env.PUBLIC_POSTHOG_HOST;
+
+  if (apiKey) {
+    posthog.init(apiKey, {
+      api_host: host || "https://us.i.posthog.com",
+      capture_pageview: false,
+    });
+
+    // Delegated click handler — attached once, survives soft navigations
+    let clickHandlerAttached = false;
+    if (!clickHandlerAttached) {
+      clickHandlerAttached = true;
+      document.addEventListener("click", (e) => {
+        const el = (e.target as Element)?.closest("[data-track]") as HTMLElement | null;
+        if (!el) return;
+        const event = el.dataset.track!;
+        posthog.capture(event, {
+          pathname: window.location.pathname,
+          surface: el.dataset.trackSurface ?? "unknown",
+          label: el.dataset.trackLabel ?? el.textContent?.trim().slice(0, 40) ?? "",
+        });
+      });
+    }
+
+    // Page view on every navigation (initial + View Transitions)
+    document.addEventListener("astro:page-load", () => {
+      posthog.capture("page_view", { pathname: window.location.pathname });
+    });
+  }
+</script>

@@ -18,7 +18,7 @@ const socialIcons = [
     class="flex text-lg gap-3.5 float-right transition-opacity duration-300 hover:opacity-90">
     {
       socialIcons.map((link) => (
-        <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label} class="text-[#1C1C1C] dark:text-[#D4D4D4]">
+        <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label} data-track="social_link" data-track-surface="footer" data-track-label={link.label.toLowerCase()} class="text-[#1C1C1C] dark:text-[#D4D4D4]">
           <Icon name={link.icon} />
         </a>
       ))

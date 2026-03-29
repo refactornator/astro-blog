@@ -27,6 +27,9 @@ const currentPath = Astro.url.pathname;
             <a
               href={path}
               data-prefetch="intent"
+              data-track="nav_link"
+              data-track-surface="nav"
+              data-track-label={name.toLowerCase()}
               class={`transition-all flex align-middle relative pb-1 ${
                 isActive
                   ? "border-b-2 border-sapphire dark:border-solar text-sapphire dark:text-solar"
