@@ -36,9 +36,7 @@ export default defineConfig({
       gfm: true,
     }),
     sitemap(),
-    react({
-      experimentalReactChildren: true,
-    }),
+    react(),
     icon({
       include: {
         "fa6-solid": [
