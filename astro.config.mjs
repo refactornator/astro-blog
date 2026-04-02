@@ -2,6 +2,7 @@ import fs from "node:fs"
 import mdx from "@astrojs/mdx"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
+import sanity from "@sanity/astro"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
@@ -9,8 +10,6 @@ import opengraphImages, { presets } from "astro-opengraph-images"
 import rehypeKatex from "rehype-katex"
 import rehypeSlug from "rehype-slug"
 import remarkMath from "remark-math"
-
-import sanity from "@sanity/astro"
 
 // https://astro.build/config
 export default defineConfig({
