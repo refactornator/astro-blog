@@ -58,7 +58,6 @@
     "tailwindcss": "^4.2.2"
   },
   "trustedDependencies": [
-    "@tailwindcss/oxide",
     "core-js",
     "esbuild",
     "protobufjs",
