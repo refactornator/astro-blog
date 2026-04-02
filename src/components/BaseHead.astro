@@ -19,7 +19,21 @@ const openGraphImageUrl = getImagePath({ url, site });
 const openGraphImage = image
   ? new URL(image, url.href).href
   : openGraphImageUrl;
+
+const posthogApiKey = import.meta.env.PUBLIC_POSTHOG_API_KEY;
+const posthogHost = import.meta.env.PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
+const posthogOrigin = new URL(posthogHost).origin;
 ---
+
+<!-- Resource hints for third-party origins -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+{posthogApiKey && (
+  <>
+    <link rel="preconnect" href={posthogOrigin} crossorigin />
+    <link rel="dns-prefetch" href={posthogOrigin} />
+  </>
+)}
 
 <SEO
   title={title}

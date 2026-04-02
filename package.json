@@ -11,7 +11,8 @@
     "format": "biome format --write .",
     "check": "biome check .",
     "harness": "bun harness/orchestrator.js",
-    "harness:dry": "DRY_RUN=true bun harness/orchestrator.js"
+    "harness:dry": "DRY_RUN=true bun harness/orchestrator.js",
+    "lighthouse": "bun run build && lhci autorun"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",
@@ -44,13 +45,15 @@
     "remark-math": "^6.0.0",
     "sanity": "^4.22.0",
     "styled-components": "^6.3.12",
-    "tw-to-css": "^0.0.12"
+    "tw-to-css": "^0.0.12",
+    "web-vitals": "^5.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.9",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/tabler": "^1.2.33",
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
     "autoprefixer": "^10.4.27",
