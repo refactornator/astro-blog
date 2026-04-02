@@ -1,6 +1,7 @@
 ---
-// PostHog analytics — captures page views and delegated data-track click events.
+// PostHog analytics — captures page views, delegated data-track click events, and Core Web Vitals.
 // Included once in Base.astro. Handles Astro View Transitions via astro:page-load.
+// PostHog init is deferred to idle to stay off the critical rendering path.
 ---
 
 <script>
@@ -10,10 +11,25 @@
   const host = import.meta.env.PUBLIC_POSTHOG_HOST;
 
   if (apiKey) {
-    posthog.init(apiKey, {
-      api_host: host || "https://us.i.posthog.com",
-      capture_pageview: false,
-    });
+    // Event queue — captures events before PostHog is initialized
+    const queue: Array<[string, Record<string, unknown>]> = [];
+    let ready = false;
+
+    function capture(event: string, props: Record<string, unknown>) {
+      if (ready) {
+        posthog.capture(event, props);
+      } else {
+        queue.push([event, props]);
+      }
+    }
+
+    function flush() {
+      if (!ready) return;
+      for (const [e, p] of queue) posthog.capture(e, p);
+      queue.length = 0;
+    }
+
+    // Attach listeners immediately (before init) so no events are missed
 
     // Delegated click handler — attached once, survives soft navigations
     let clickHandlerAttached = false;
@@ -23,7 +39,7 @@
         const el = (e.target as Element)?.closest("[data-track]") as HTMLElement | null;
         if (!el) return;
         const event = el.dataset.track!;
-        posthog.capture(event, {
+        capture(event, {
           pathname: window.location.pathname,
           surface: el.dataset.trackSurface ?? "unknown",
           label: el.dataset.trackLabel ?? el.textContent?.trim().slice(0, 40) ?? "",
@@ -33,7 +49,44 @@
 
     // Page view on every navigation (initial + View Transitions)
     document.addEventListener("astro:page-load", () => {
-      posthog.capture("page_view", { pathname: window.location.pathname });
+      capture("page_view", { pathname: window.location.pathname });
+    });
+
+    // Defer PostHog init to idle time
+    const initPostHog = () => {
+      if (ready) return;
+      posthog.init(apiKey, {
+        api_host: host || "https://us.i.posthog.com",
+        capture_pageview: false,
+      });
+      ready = true;
+      flush();
+    };
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initPostHog);
+    } else {
+      setTimeout(initPostHog, 3500);
+    }
+
+    // Best-effort flush on page exit for very short sessions
+    document.addEventListener("pagehide", () => {
+      if (!ready) {
+        initPostHog();
+      }
+    });
+
+    // Core Web Vitals — dynamically imported, reported via the same capture queue
+    import("web-vitals").then(({ onLCP, onCLS, onINP, onFCP, onTTFB }) => {
+      const initialPathname = window.location.pathname;
+      const report = ({ name, value, rating }: { name: string; value: number; rating: string }) => {
+        capture("web_vital", { metric_name: name, value, rating, pathname: initialPathname });
+      };
+      onLCP(report);
+      onCLS(report);
+      onINP(report);
+      onFCP(report);
+      onTTFB(report);
     });
   }
 </script>
