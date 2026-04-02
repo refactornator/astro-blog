@@ -1,9 +1,9 @@
 // harness/orchestrator.js — Main optimization loop.
 // Entry point: bun harness/orchestrator.js
 
+import { execSync } from "child_process"
 import fs from "fs"
 import path from "path"
-import { execSync } from "child_process"
 import { getMetrics } from "./posthog.js"
 
 const EXPERIMENTS_FILE = path.resolve("./experiments.json")

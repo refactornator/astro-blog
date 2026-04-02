@@ -12,6 +12,9 @@
   "javascript": {
     "formatter": { "quoteStyle": "double", "semicolons": "asNeeded" }
   },
+  "css": {
+    "parser": { "tailwindDirectives": true }
+  },
   "json": {
     "formatter": { "trailingCommas": "none" }
   },
@@ -24,7 +27,8 @@
     {
       "includes": ["dist/**", "build/**", ".astro/**", "studio/**"],
       "linter": { "enabled": false },
-      "formatter": { "enabled": false }
+      "formatter": { "enabled": false },
+      "assist": { "enabled": false }
     }
   ]
 }
