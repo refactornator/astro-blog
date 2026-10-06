@@ -1,7 +1,6 @@
 import fs from "node:fs"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
-import sanity from "@sanity/astro"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
@@ -44,11 +43,6 @@ export default defineConfig({
           },
         ],
       },
-    }),
-    sanity({
-      projectId: "t6kvjzfq",
-      dataset: "production",
-      useCdn: false, // for static builds
     }),
   ],
 })
