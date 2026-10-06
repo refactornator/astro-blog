@@ -1,5 +1,4 @@
 import fs from "node:fs"
-import mdx from "@astrojs/mdx"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import sanity from "@sanity/astro"
@@ -7,9 +6,6 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
 import opengraphImages, { presets } from "astro-opengraph-images"
-import rehypeKatex from "rehype-katex"
-import rehypeSlug from "rehype-slug"
-import remarkMath from "remark-math"
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,44 +14,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [
-    mdx({
-      image: {
-        domains: ["unsplash.com"],
-      },
-      optimize: true,
-      shikiConfig: {
-        themes: {
-          light: "github-light",
-          dark: "github-dark",
-          langs: [],
-        },
-      },
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeSlug, rehypeKatex],
-      gfm: true,
-    }),
     sitemap(),
     react(),
     icon({
       include: {
-        "fa6-solid": [
-          "rss",
-          "circle-half-stroke",
-          "wand-magic-sparkles",
-          "film",
-          "building",
-          "handshake",
-          "chart-line",
-          "comments",
-          "hammer",
-          "mobile",
-          "house",
-          "masks-theater",
-          "wind",
-          "camera",
-          "pen-nib",
-        ],
-        tabler: ["mail-filled"],
+        "fa6-solid": ["circle-half-stroke"],
         "fa6-brands": ["github", "instagram", "linkedin-in"],
       },
     }),
