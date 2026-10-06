@@ -4,7 +4,7 @@ export const metaData = {
   name: "Liam Lindner",
   ogImage: "/opengraph-image.png",
   description:
-    "Liam is a software engineer and artist in San Francisco. Explore projects, essays, and photography at the intersection of technology, creativity, and curiosity.",
+    "Liam is a product leader in San Francisco. Find his work and photography here.",
 }
 
 export const socialLinks = {
