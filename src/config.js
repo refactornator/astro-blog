@@ -3,8 +3,7 @@ export const metaData = {
   title: "Liam Lindner",
   name: "Liam Lindner",
   ogImage: "/opengraph-image.png",
-  description:
-    "Liam is a product leader in San Francisco. Find his work and photography here.",
+  description: "Liam is a product leader in San Francisco. Find his work and photography here.",
 }
 
 export const socialLinks = {
