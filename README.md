@@ -25,7 +25,7 @@ The dev server runs at [http://localhost:4321/](http://localhost:4321/).
 
 ## Analytics
 
-- **Google Analytics 4** (`G-ME24SJN4RE`), set in `src/components/GoogleAnalytics.astro`; sends a page view on every navigation
+- **Google Analytics 4** (`G-ME24SJN4RE`), set in `src/components/GoogleAnalytics.astro`: a page view on every navigation, plus `contact_click` (the email link) and `outbound_link_click` (links to other sites). Both carry `link_location` from the nearest `data-ga-location` (`bio`, `footer`, `404`).
 - **Cloudflare Web Analytics**, injected automatically by Cloudflare Pages (no code here)
 
 ## Where things live
