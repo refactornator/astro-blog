@@ -38,19 +38,19 @@ const posthogOrigin = new URL(posthogHost).origin;
 <SEO
   title={title}
   titleTemplate=`%s | ${metaData.title}`
-  titleDefault={metaData.title}
+  titleDefault={metaData.homeTitle}
   description={description}
   charset="UTF-8"
   openGraph={{
     basic: {
-      title: title || metaData.title,
+      title: title ? `${title} | ${metaData.title}` : metaData.homeTitle,
       type: "website",
       image: openGraphImageUrl,
       url: url,
     },
     optional: {
       description,
-      siteName: "AstroFolio",
+      siteName: metaData.name,
       locale: "en_US",
     },
   }}

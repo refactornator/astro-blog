@@ -2,7 +2,7 @@
 
 My personal site: a single page with a short bio and links. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), deployed to [Cloudflare Pages](https://pages.cloudflare.com/) on every merge to `main`.
 
-Live at [astro-blog-9og.pages.dev](https://astro-blog-9og.pages.dev).
+Live at [refactornator.com](https://refactornator.com).
 
 ## Development
 
