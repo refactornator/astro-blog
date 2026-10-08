@@ -13,7 +13,7 @@ export const contactEmail = "wlindner522@gmail.com"
 
 export const projectLinks = {
   coaching: "https://liameveryday.com",
-  consensusBuilder: "https://consensusbuilder.app?src=refactornator",
+  consensusBuilder: "https://consensusbuilder.app?src=liamlindner",
   killTheMeeting: "https://liameveryday.substack.com/p/kill-the-meeting",
   dreamCollective: "https://www.instagram.com/dreamcollectiveimprov",
   leela: "https://leela-sf.com",
