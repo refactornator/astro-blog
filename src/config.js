@@ -9,14 +9,14 @@ export const metaData = {
     "Liam Lindner is an entrepreneur in San Francisco running public experiments: a life coaching business, Consensus Builder, Dream Collective improv, improv instruction, and TikTok content.",
 }
 
-export const contactEmail = "hello@liameveryday.com"
+export const contactEmail = "wlindner522@gmail.com"
 
 export const projectLinks = {
   coaching: "https://liameveryday.com",
   consensusBuilder: "https://consensusbuilder.app?src=refactornator",
   killTheMeeting: "https://liameveryday.substack.com/p/kill-the-meeting",
   dreamCollective: "https://www.instagram.com/dreamcollectiveimprov",
-  tiktok: "https://www.tiktok.com/@liameveryday",
+  leela: "https://leela-sf.com",
 }
 
 export const socialLinks = {
@@ -24,4 +24,5 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/liameveryday",
   linkedin: "https://www.linkedin.com/in/liam-lindner/",
   substack: "https://substack.com/@liameveryday",
+  tiktok: "https://www.tiktok.com/@liameveryday",
 }
