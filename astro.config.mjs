@@ -1,6 +1,5 @@
 import fs from "node:fs"
 import react from "@astrojs/react"
-import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
@@ -8,12 +7,11 @@ import opengraphImages, { presets } from "astro-opengraph-images"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-blog-9og.pages.dev",
+  site: "https://refactornator.com",
   vite: {
     plugins: [tailwindcss()],
   },
   integrations: [
-    sitemap(),
     react(),
     icon({
       include: {

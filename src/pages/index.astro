@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import profilePhoto from "../assets/profile.png";
-import { socialLinks } from "../config";
+import { contactEmail, projectLinks } from "../config";
 import Base from "../layouts/Base.astro";
 ---
 
@@ -9,25 +9,40 @@ import Base from "../layouts/Base.astro";
   <section>
     <Image
       src={profilePhoto}
-      alt="Profile photo"
+      alt="Liam Lindner"
       class="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 sm:grayscale sm:hover:grayscale-0"
       width={160}
       height={160}
     />
 
-    <h1 class="mb-8 text-xl font-medium tracking-tight">Product Leader</h1>
-
     <div class="prose prose-neutral dark:prose-invert">
       <p>
-        I'm Liam, a product leader living in San Francisco. I build AI-powered tools with strong product intuition—understanding what actually matters to users and turning that into things worth shipping.
+        I'm Liam, an entrepreneur living in San Francisco. I've spent the past 20 years working for companies in tech: as a co-founder, a software engineer and sales engineer, a manager and tech lead. Now I collaborate with organizations to run experiments and build projects that align with human flourishing. I'm currently running a few projects of my own:
       </p>
+      <ul>
+        <li>
+          Started a life coaching business this year. Coaching for a well-rounded life.
+          <a href={projectLinks.coaching} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="liameveryday">liameveryday.com</a>
+        </li>
+        <li>
+          Building Consensus Builder, an app that lets groups make decisions over text instead of sitting in meetings.
+          <a href={projectLinks.killTheMeeting} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="substack_post">Substack post</a> ·
+          <a href={projectLinks.consensusBuilder} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="consensus_builder">consensusbuilder.app</a>
+        </li>
+        <li>
+          Started Dream Collective, an improv troupe. We interview someone about their day, then play their dream back to them.
+          <a href={projectLinks.dreamCollective} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="dream_collective">Instagram</a>
+        </li>
+        <li>
+          Training as an improv instructor at Leela Improv Theatre in San Francisco.
+        </li>
+        <li>
+          Posting TikTok videos on the way to 10k followers. I explain things like AI and regulatory capture through stories and improv. Show, don't tell.
+          <a href={projectLinks.tiktok} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="tiktok">TikTok</a>
+        </li>
+      </ul>
       <p>
-        Outside of work, I spend time performing improv theater and taking photographs. These practices keep me grounded and remind me what life is all about.
-      </p>
-      <p>
-        Find me on <a href={socialLinks.linkedin} target="_blank" data-track="social_link" data-track-surface="home_bio" data-track-label="linkedin">LinkedIn</a>,
-        <a href={socialLinks.github} target="_blank" data-track="social_link" data-track-surface="home_bio" data-track-label="github">GitHub</a>, and
-        <a href={socialLinks.substack} target="_blank" data-track="social_link" data-track-surface="home_bio" data-track-label="substack">Substack</a>.
+        <a href={`mailto:${contactEmail}`} data-track="contact_email" data-track-surface="home_bio" data-track-label="drop_me_a_line">Drop me a line</a> if you want to work together and let me know what you need help on. I'm excited to use technology for the betterment of life on earth and I'm looking for others who feel the same.
       </p>
     </div>
   </section>

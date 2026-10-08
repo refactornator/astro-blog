@@ -7,15 +7,18 @@ const navItems: Record<string, { name: string }> = {};
 
 // Get current page path
 const currentPath = Astro.url.pathname;
+
+// The name is the homepage's main heading
+const NameTag = currentPath === "/" ? "h1" : "div";
 ---
 
 <nav class="mb-2 py-5" style="padding-top: max(1.25rem, env(safe-area-inset-top));">
   <div class="flex flex-row items-center justify-between">
-    <div class="flex items-center">
+    <NameTag class="flex items-center">
       <a href="/" class="text-3xl font-semibold text-[#1C1C1C] dark:text-[#D4D4D4]">
         {metaData.name}
       </a>
-    </div>
+    </NameTag>
     <div class="flex flex-row gap-4 ml-auto items-center">
       {
         Object.entries(navItems).map(([path, { name }]) => {
