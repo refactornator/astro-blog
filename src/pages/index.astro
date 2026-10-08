@@ -6,7 +6,7 @@ import Base from "../layouts/Base.astro";
 ---
 
 <Base>
-  <section>
+  <section data-ga-location="bio">
     <Image
       src={profilePhoto}
       alt="Liam Lindner"
@@ -23,26 +23,26 @@ import Base from "../layouts/Base.astro";
       <ul>
         <li>
           Running a life coaching business. Coaching for a well-rounded life.
-          <a href={projectLinks.coaching} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="liameveryday">liameveryday.com</a>
+          <a href={projectLinks.coaching} target="_blank">liameveryday.com</a>
         </li>
         <li>
           Building Consensus Builder, an app that lets groups make decisions over text instead of sitting in meetings.
-          <a href={projectLinks.killTheMeeting} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="substack_post">Substack post</a> ·
-          <a href={projectLinks.consensusBuilder} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="consensus_builder">consensusbuilder.app</a>
+          <a href={projectLinks.killTheMeeting} target="_blank">Substack post</a> ·
+          <a href={projectLinks.consensusBuilder} target="_blank">consensusbuilder.app</a>
         </li>
         <li>
           Performing in Dream Collective, an improv troupe. We interview an audience member about their day, then make up a dream version of it on stage.
-          <a href={projectLinks.dreamCollective} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="dream_collective">Instagram</a>
+          <a href={projectLinks.dreamCollective} target="_blank">Instagram</a>
         </li>
         <li>
-          Teaching Improv at <a href={projectLinks.leela} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="leela">Leela Improv Theatre</a> in San Francisco.
+          Teaching Improv at <a href={projectLinks.leela} target="_blank">Leela Improv Theatre</a> in San Francisco.
         </li>
         <li>
-          Building an audience on <a href={socialLinks.tiktok} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="tiktok">TikTok</a> and <a href={socialLinks.instagram} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="instagram">Instagram</a>.
+          Building an audience on <a href={socialLinks.tiktok} target="_blank">TikTok</a> and <a href={socialLinks.instagram} target="_blank">Instagram</a>.
         </li>
       </ul>
       <p>
-        <a href={`mailto:${contactEmail}`} data-track="contact_email" data-track-surface="home_bio" data-track-label="drop_me_a_line">Drop me a line</a>. I'd love to hear about what you're working on.
+        <a href={`mailto:${contactEmail}`}>Drop me a line</a>. I'd love to hear about what you're working on.
       </p>
     </div>
   </section>
