@@ -2,7 +2,7 @@
 
 My personal site: a single page with a short bio and links. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), deployed to [Cloudflare Pages](https://pages.cloudflare.com/) on every merge to `main`.
 
-Live at [liamlindner.com](https://liamlindner.com). refactornator.com redirects there.
+Live at [liamlindner.com](https://liamlindner.com). refactornator.com and liamlinder.com redirect there.
 
 ## Development
 
@@ -22,9 +22,11 @@ The dev server runs at [http://localhost:4321/](http://localhost:4321/).
 | `bun run check` | Lint and format check with Biome (runs in CI) |
 | `bun run format` | Apply Biome formatting |
 | `bun run lighthouse` | Build and run Lighthouse CI |
-| `bun run harness` | Run the PostHog-driven optimization harness (`harness:dry` for a dry run) |
 
-Copy `.env.example` to `.env` for the PostHog keys used by analytics and the harness.
+## Analytics
+
+- **Google Analytics 4** (`G-ME24SJN4RE`), set in `src/components/GoogleAnalytics.astro`; sends a page view on every navigation
+- **Cloudflare Web Analytics**, injected automatically by Cloudflare Pages (no code here)
 
 ## Where things live
 
