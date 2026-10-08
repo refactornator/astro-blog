@@ -2,7 +2,7 @@
 
 My personal site: a single page with a short bio and links. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), deployed to [Cloudflare Pages](https://pages.cloudflare.com/) on every merge to `main`.
 
-Live at [refactornator.com](https://refactornator.com).
+Live at [liamlindner.com](https://liamlindner.com). refactornator.com redirects there.
 
 ## Development
 

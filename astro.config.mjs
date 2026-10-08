@@ -7,7 +7,7 @@ import opengraphImages, { presets } from "astro-opengraph-images"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://refactornator.com",
+  site: "https://liamlindner.com",
   vite: {
     plugins: [tailwindcss()],
   },
