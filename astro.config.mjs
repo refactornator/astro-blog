@@ -16,7 +16,7 @@ export default defineConfig({
     icon({
       include: {
         "fa6-solid": ["circle-half-stroke"],
-        "fa6-brands": ["github", "instagram", "linkedin-in"],
+        "fa6-brands": ["github", "instagram", "linkedin-in", "tiktok"],
       },
     }),
     opengraphImages({

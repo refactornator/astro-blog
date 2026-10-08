@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import profilePhoto from "../assets/profile.png";
-import { contactEmail, projectLinks } from "../config";
+import { contactEmail, projectLinks, socialLinks } from "../config";
 import Base from "../layouts/Base.astro";
 ---
 
@@ -17,11 +17,12 @@ import Base from "../layouts/Base.astro";
 
     <div class="prose prose-neutral dark:prose-invert">
       <p>
-        I'm Liam, an entrepreneur living in San Francisco. I've spent the past 20 years working for companies in tech: as a co-founder, a software engineer and sales engineer, a manager and tech lead. Now I collaborate with organizations to run experiments and build projects that align with human flourishing. I'm currently running a few projects of my own:
+        I'm Liam, an entrepreneur living in San Francisco. I've spent the past 20 years working in tech: as a co-founder, a software engineer and sales engineer, a manager and tech lead. Now I collaborate with organizations on projects that align with human flourishing.
       </p>
+      <p class="mt-8 mb-0 text-lg font-semibold tracking-tight">Currently:</p>
       <ul>
         <li>
-          Started a life coaching business this year. Coaching for a well-rounded life.
+          Running a life coaching business. Coaching for a well-rounded life.
           <a href={projectLinks.coaching} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="liameveryday">liameveryday.com</a>
         </li>
         <li>
@@ -30,19 +31,18 @@ import Base from "../layouts/Base.astro";
           <a href={projectLinks.consensusBuilder} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="consensus_builder">consensusbuilder.app</a>
         </li>
         <li>
-          Started Dream Collective, an improv troupe. We interview someone about their day, then play their dream back to them.
+          Performing in Dream Collective, an improv troupe. We interview an audience member about their day, then make up a dream version of it on stage.
           <a href={projectLinks.dreamCollective} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="dream_collective">Instagram</a>
         </li>
         <li>
-          Training as an improv instructor at Leela Improv Theatre in San Francisco.
+          Teaching Improv at <a href={projectLinks.leela} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="leela">Leela Improv Theatre</a> in San Francisco.
         </li>
         <li>
-          Posting TikTok videos on the way to 10k followers. I explain things like AI and regulatory capture through stories and improv. Show, don't tell.
-          <a href={projectLinks.tiktok} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="tiktok">TikTok</a>
+          Building an audience on <a href={socialLinks.tiktok} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="tiktok">TikTok</a> and <a href={socialLinks.instagram} target="_blank" data-track="project_link" data-track-surface="home_bio" data-track-label="instagram">Instagram</a>.
         </li>
       </ul>
       <p>
-        <a href={`mailto:${contactEmail}`} data-track="contact_email" data-track-surface="home_bio" data-track-label="drop_me_a_line">Drop me a line</a> if you want to work together and let me know what you need help on. I'm excited to use technology for the betterment of life on earth and I'm looking for others who feel the same.
+        <a href={`mailto:${contactEmail}`} data-track="contact_email" data-track-surface="home_bio" data-track-label="drop_me_a_line">Drop me a line</a>. I'd love to hear about what you're working on.
       </p>
     </div>
   </section>
