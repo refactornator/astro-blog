@@ -1,5 +1,5 @@
 export const metaData = {
-  baseUrl: "https://refactornator.com",
+  baseUrl: "https://liamlindner.com",
   title: "Liam Lindner",
   name: "Liam Lindner",
   // Full homepage title; other pages use "<page title> | <title>"
