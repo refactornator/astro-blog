@@ -1,5 +1,4 @@
 import fs from "node:fs"
-import react from "@astrojs/react"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
@@ -12,7 +11,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [
-    react(),
     icon({
       include: {
         "fa6-solid": ["circle-half-stroke"],

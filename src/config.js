@@ -1,10 +1,8 @@
 export const metaData = {
-  baseUrl: "https://liamlindner.com",
   title: "Liam Lindner",
   name: "Liam Lindner",
   // Full homepage title; other pages use "<page title> | <title>"
   homeTitle: "Liam Lindner — Experiments in coaching, software, and improv",
-  ogImage: "/opengraph-image.png",
   description:
     "Liam Lindner is an entrepreneur in San Francisco running public experiments: a life coaching business, Consensus Builder, Dream Collective improv, improv instruction, and TikTok content.",
 }
